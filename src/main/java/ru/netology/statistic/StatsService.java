@@ -9,11 +9,8 @@ public class StatsService {
         return total;
     }
 
-    public int shouldCalculateAverageSalesVolume(int[] sales) {
-        int total = 0;
-        for (int sale : sales) {
-            total += sale;
-        }
+    public int shouldCalculateAverageSalesVolume(int total) {
+
         int average = total / 12;
 
         return average;
@@ -49,12 +46,7 @@ public class StatsService {
         return monthnumber;
     }
 
-    public int shouldCalculateAmountOfMonthsUnderAverage(int[] sales) {
-        int total = 0;
-        for (int sale : sales) {
-            total += sale;
-        }
-        int average = total / 12;
+    public int shouldCalculateAmountOfMonthsUnderAverage(int[] sales, int average) {
 
         int amount = 0;
         for (int sale : sales) {
@@ -66,12 +58,7 @@ public class StatsService {
         return amount;
     }
 
-    public int shouldCalculateAmountOfMonthsAboveAverage(int[] sales) {
-        int total = 0;
-        for (int sale : sales) {
-            total += sale;
-        }
-        int average = total / 12;
+    public int shouldCalculateAmountOfMonthsAboveAverage(int[] sales, int average) {
 
         int amount = 0;
         for (int sale : sales) {
