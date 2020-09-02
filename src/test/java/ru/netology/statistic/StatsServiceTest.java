@@ -27,6 +27,17 @@ class StatsServiceTest {
     }
 
     @org.junit.jupiter.api.Test
+    void shouldCalculateMonthWithMaximum() {
+        StatsService service = new StatsService();
+        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int expected = 8;
+
+        int actual = service.shouldCalculateMonthWithMaximum(sales);
+
+        assertEquals(expected, actual);
+    }
+
+    @org.junit.jupiter.api.Test
     void shouldCalculateMonthWithMinimum() {
         StatsService service = new StatsService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};

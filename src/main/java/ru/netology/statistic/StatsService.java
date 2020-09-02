@@ -15,12 +15,27 @@ public class StatsService {
         return average;
     }
 
+    public int shouldCalculateMonthWithMaximum(int[] sales) {
+        int maximum = sales[0];
+        int indexForMaximum = 0;
+        for (int i = 0; i < sales.length; i++) {
+            int score = sales[i];
+            if (maximum <= score) {
+                maximum = score;
+                indexForMaximum = i;
+            }
+        }
+        int monthnumber = indexForMaximum + 1;
+
+        return monthnumber;
+    }
+
     public int shouldCalculateMonthWithMinimum(int[] sales) {
         int minimum = sales[0];
         int indexForMinimum = 0;
         for (int i = 0; i < sales.length; i++) {
             int score = sales[i];
-            if (minimum > score) {
+            if (minimum >= score) {
                 minimum = score;
                 indexForMinimum = i;
             }
@@ -29,6 +44,7 @@ public class StatsService {
 
         return monthnumber;
     }
+
     public int shouldCalculateAmountOfMonthsUnderAverage(int[] sales) {
         int amount = 0;
         for (int sale : sales) {
