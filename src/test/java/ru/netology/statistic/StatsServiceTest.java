@@ -18,10 +18,10 @@ class StatsServiceTest {
     @org.junit.jupiter.api.Test
     void shouldCalculateAverageSalesVolume() {
         StatsService service = new StatsService();
-        int total = 180;
+        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 15;
 
-        int actual = service.shouldCalculateAverageSalesVolume(total);
+        int actual = service.shouldCalculateAverageSalesVolume(sales);
 
         assertEquals(expected, actual);
     }
